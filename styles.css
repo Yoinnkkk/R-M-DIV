@@ -43,7 +43,7 @@ body {
 
 .test p {
     position: absolute;
-    font-size: 10em;
+    font-size: 10rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

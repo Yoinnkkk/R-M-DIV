@@ -37,6 +37,15 @@ window.addEventListener('load', function () {
 
     // Block Resize
     resizeaction.onmousedown = resizemousedown;
+    resizeaction.onmouseover = resizemouseover;
+    function resizemouseover(event) {
+        event.stopPropagation();
+        block.children[1].textContent = "Resize Me";
+        block.onmouseleave = function(){
+            block.children[1].textContent = "";
+            block.onmouseleave = null;
+        }
+    }
 
     function resizemousedown(event) {
         event.stopPropagation();
@@ -49,6 +58,12 @@ window.addEventListener('load', function () {
         
     }
     function resizemousemove(event) {
+        if (block.offsetWidth > block.offsetHeight) {
+            block.children[1].style.fontSize = block.offsetHeight/3 + "px";
+        } else {
+            block.children[1].style.fontSize = block.offsetWidth/3 + "px";
+        }
+        
         block.style.height = startheight + event.pageY - y + "px";
         block.style.width = startwidth + event.pageX - x + "px";
     }
