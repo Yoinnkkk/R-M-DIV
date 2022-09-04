@@ -1,3 +1,12 @@
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
 :root {
     --bgcolor: #121212;
     --boxcolor: #a7a4a4;
@@ -17,11 +26,37 @@ body {
     align-items: center;
     justify-content: center;
 }
+* {
+    text-align: center;
+}
 
 .test {
     background-color: var(--boxcolor);
+    outline: 1px green dashed;
     position: absolute;
     z-index: 9;
     height: 50%;
     width: 50%;
+    top: 50px;
+    left: 50px;
+}
+
+.test p {
+    position: absolute;
+    font-size: 10em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.resize {
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    cursor: nwse-resize;
+    transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+    border-style: solid;
+    border-width: 8px;
+    border-color: transparent transparent transparent #008000;
+    z-index: 10;
 }
