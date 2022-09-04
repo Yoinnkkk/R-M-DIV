@@ -1,0 +1,27 @@
+:root {
+    --bgcolor: #121212;
+    --boxcolor: #a7a4a4;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+
+body {
+    background-color: var(--bgcolor);
+}
+
+.canvas {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test {
+    background-color: var(--boxcolor);
+    position: absolute;
+    z-index: 9;
+    height: 50%;
+    width: 50%;
+}
