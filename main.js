@@ -1,15 +1,31 @@
+
+
+
 window.addEventListener('load', function () {
     var pos1=0, pos2=0, pos3=0, pos4=0, x=0, y=0, width=0, height=0;
     var block = document.getElementById("test");
     var resizeaction = document.getElementById("resize");
+    var p = block.children[1]
     // Block Movement
     block.onmouseover = catchmouseover;
     block.onmousedown = catchmousedown;
     block.style.cursor = "move";
     function catchmouseover() {
-        block.children[1].textContent = "Move Me";
+        p.textContent = "Move Me";
+        p.style.opacity = 1;
+        p.animate(FadeIn, Timing);
+        if (block.style.backgroundColor == "#77dd77") {
+            block.animate(bFadeInRM, Timing);
+            block.style.backgroundColor = "#ff6961";
+        } else {
+            block.animate(bFadeInM, Timing);
+            block.style.backgroundColor = "#ff6961";
+        }
         block.onmouseleave = function(){
-            block.children[1].textContent = "";
+            p.animate(FadeOut, Timing)
+            p.style.opacity = 0;
+            block.animate(bFadeOutM, Timing);
+            block.style.backgroundColor = "#a7a4a4";
             block.onmouseleave = null;
         }
     }
@@ -40,9 +56,21 @@ window.addEventListener('load', function () {
     resizeaction.onmouseover = resizemouseover;
     function resizemouseover(event) {
         event.stopPropagation();
-        block.children[1].textContent = "Resize Me";
+        p.textContent = "Resize Me";
+        p.style.opacity = 1
+        block.animate(bFadeInR, Timing);
+        if (block.style.backgroundColor == "#ff6961") {
+            block.animate(bFadeInMR, Timing);
+            block.style.backgroundColor = "#77dd77";
+        } else {
+            block.animate(bFadeInR, Timing);
+            block.style.backgroundColor = "#77dd77";
+        }
         block.onmouseleave = function(){
-            block.children[1].textContent = "";
+            p.animate(FadeOut, Timing)
+            p.style.opacity = 0
+            block.animate(bFadeOutR, Timing);
+            block.style.backgroundColor = "#a7a4a4";
             block.onmouseleave = null;
         }
     }
@@ -59,9 +87,9 @@ window.addEventListener('load', function () {
     }
     function resizemousemove(event) {
         if (block.offsetWidth > block.offsetHeight) {
-            block.children[1].style.fontSize = block.offsetHeight/3 + "px";
+            p.style.fontSize = block.offsetHeight/3 + "px";
         } else {
-            block.children[1].style.fontSize = block.offsetWidth/3 + "px";
+            p.style.fontSize = block.offsetWidth/3 + "px";
         }
         
         block.style.height = startheight + event.pageY - y + "px";
