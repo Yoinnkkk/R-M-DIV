@@ -30,7 +30,7 @@ body {
     text-align: center;
 }
 
-.test {
+.window {
     background-color: var(--boxcolor);
     outline: 1px green dashed;
     position: absolute;
@@ -41,7 +41,7 @@ body {
     left: 50px;
 }
 
-.test p {
+.window p {
     position: absolute;
     font-size: 10rem;
     top: 50%;
