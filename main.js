@@ -128,5 +128,5 @@ function CreateWindow(position = {x:0,y:0}, options) {
 
 // Testing window creator
 window.addEventListener('load', function () {
-    CreateWindow({x:15,y:15}, {parentid:"canvas",resizable:true,movable:true, title:"Window", dragArea:"title"})
+    CreateWindow({x:200,y:550}, {parentid:"canvas",resizable:true,movable:true, title:"Window", dragArea:"title"})
 })
