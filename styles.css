@@ -10,6 +10,7 @@
 :root {
     --bgcolor: #121212;
     --boxcolor: #a7a4a4;
+    --titleboxcolor: #AEC6CF;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
@@ -30,6 +31,13 @@ body {
     text-align: center;
 }
 
+.title {
+    background-color: var(--titleboxcolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .window {
     background-color: var(--boxcolor);
     outline: 1px green dashed;
@@ -41,7 +49,7 @@ body {
     left: 50px;
 }
 
-.window p {
+#bodyID {
     position: absolute;
     font-size: 10rem;
     top: 50%;
