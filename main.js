@@ -2,7 +2,7 @@
 function CreateWindow(position = {x:0,y:0}, options) {
     // Pos = {x,y}
     var top = position.x + "px", left = position.y + "px";
-
+    console.log(options)
     /* Options = 
     {
         0 parentid = parent id || default body
@@ -21,7 +21,7 @@ function CreateWindow(position = {x:0,y:0}, options) {
     options.text = (typeof options.text !== 'undefined') ? options.text : ""
     options.dragArea = (typeof options.dragArea !== 'undefined') ? options.dragArea : "full"
     options.title = (typeof options.title !== 'undefined') ? options.title : ""
-
+    console.log(options)
     // Variables
     var pos1=0, pos2=0, pos3=0, pos4=0, x=0, y=0;
 

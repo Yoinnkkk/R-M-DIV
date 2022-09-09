@@ -9,12 +9,21 @@
   }
 :root {
     --bgcolor: #121212;
-    --boxcolor: #a7a4a4;
-    --titleboxcolor: #AEC6CF;
+    /*--boxcolor: #a7a4a4;*/
+    --boxcolor: #3d3d3d;
+    /*--titleboxcolor: #AEC6CF;*/
+    --titleboxcolor: #291754;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
 
+.night {
+    --bgcolor: #121212;
+    
+    --titleboxcolor: #AEC6CF;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
 
 body {
     background-color: var(--bgcolor);
@@ -69,11 +78,48 @@ body {
     z-index: 10;
 }
 
-.explanation {
-    text-align: left;
-    font-size: 1.5rem;
-    line-height: 28px;
+.expbody {
+    
     width: 100vw;
     height: 100vh;
+    font-size: 1.5rem;
+}
+
+.eval {
     color: #C1E1C1;
+    text-align: left;
+}
+
+.expbody p {
+    color: #C1E1C1;
+    text-align: left;
+    line-height: 28px;
+}
+
+.expbody button {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--boxcolor);
+    width: 8vw;
+    height: 3vh;
+}
+
+.expbody button:hover {
+    background-color: #878484;
+}
+
+.wrapper {
+    display: flex;
+    gap: .5rem;
+}
+.wrapper p {
+    width: 100px;
+}
+
+.eval {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #878484;
 }

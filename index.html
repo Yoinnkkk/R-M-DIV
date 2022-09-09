@@ -11,34 +11,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="animations.js" charset="utf-8"></script>
     <script type="text/javascript" src="main.js" charset="utf-8"></script>
+    <script type="text/javascript" src="eval.js" charset="utf-8"></script>
     <title>Yoink</title>
 </head>
 <body>
-    <p class="explanation noselect">
-        The way this works:<br>
-        You get a function "CreateWindow()"<br>
-        It has the parameters ({position}, {options}) which are both Javascript objects<br>
-        The first window created should be to the right and is made using function: <br>
-        <br>
-        CreateWindow({x:200,y:550}, {parentid:"canvas",resizable:true,movable:true, title:"Window", dragArea:"title"})<br>
-        <br>
-        Position = <br>
-        {<br>
-            0 x: integer || default 15px<br>
-            1 y: integer || default 15px<br>
-        }<br>
-        <br>
-        Options = <br>
-        {<br>
-        0 parentid: string || default body<br>
-        1 movable: bool || default true<br>
-        2 resizable: bool || default true<br>
-        3 text: string || default ""<br>
-        4 dragArea: option || full or title || default full<br>
-        5 title: string || default ""<br>
-        6 titleColor: hex || default #AEC6CF<br>
-        }<br>
-    </p>
+    
+    <div class="expbody">
+        
+        <p class="explanation noselect">
+            The way this works:<br>
+            You get a function "CreateWindow()"<br>
+            It has the parameters ({position}, {options}) which are both Javascript objects<br>
+            The first window created should be to the right and is made using function: <br>
+            <br>
+        </p>
+        <div id="eval" class="eval">
+            <div class="wrapper"> </div>
+                <span>CreateWindow({</span>
+                <span contenteditable="true" id="pos">x:200,y:550</span>
+                <span>}, {</span>
+                <span contenteditable="true" id="options">parentid:"canvas",resizable:true,movable:true, title:"Window", dragArea:"title"</span>
+                <span>})</span>
+            <button onclick="execute()">Execute</button>
+        </div>
+        <p class="explanation noselect">
+            <br>
+            Position = <br>
+            {<br>
+                0 x: integer || default 15px<br>
+                1 y: integer || default 15px<br>
+            }<br>
+            <br>
+            Options = <br>
+            {<br>
+            0 parentid: string || default body<br>
+            1 movable: bool || default true<br>
+            2 resizable: bool || default true<br>
+            3 text: string || default ""<br>
+            4 dragArea: option || full or title || default full<br>
+            5 title: string || default ""<br>
+            6 titleColor: hex || default #AEC6CF<br>
+            }<br>
+        </p>
+    </div>
+    
     <div class="canvas" id="canvas">
     </div>
     
