@@ -1,4 +1,3 @@
-
 function CreateWindow(position = {x:0,y:0}, options) {
     // Pos = {x,y}
     var top = position.x + "px", left = position.y + "px";
@@ -124,7 +123,6 @@ function CreateWindow(position = {x:0,y:0}, options) {
         }
     }
 }
-
 
 // Testing window creator
 window.addEventListener('load', function () {
